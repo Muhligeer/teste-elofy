@@ -1,5 +1,5 @@
 ﻿# teste-elofy
-App back-end do projeto lanches saudáveis
+App back-end do projeto lanches saudáveis__
 Criado usando Express e Sequelize
 
 ## Project setup
