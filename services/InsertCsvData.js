@@ -32,12 +32,13 @@ let csvStream = fastcsv
       port: 5432
     })
 
-    const query = `INSERT INTO "users" (Identificador, nome_usuario, altura, lactose, peso, atleta) VALUES ($1, $2, $3, $4, $5, $6)`
+    const query = `INSERT INTO "users" ("Identificador", nome_usuario, altura, lactose, peso, atleta) VALUES ($1, $2, $3, $4, $5, $6)`
     pool.connect((err, client, done) => {
       if (err) throw err
 
       try {
         csvData.forEach(row => {
+          row.pop()
           client.query(query, row, (err, res) => {
             if (err) {
               console.log(err.stack);
